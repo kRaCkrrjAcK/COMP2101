@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# This is an example of how to work with numbers.
+
+# The $((expression)) syntax assumes normal order of mathimatical operations,
+# (i.e.: %*/ then +-, from left to right)
+
+# Parentheses can be used inside arithmatic expressions to change the order.
+
+# awk can do floating point (e.g. awk 'BEGIN {printf "%.2f\n", 7/3}')
+
+#so can bc (e.g. bc <<< "6.7*1.2")
+
+read -p "Give me two numbers: " firstnum secondnum
+echo "$firstnum plus $secondnum is $((firstnum + secondnum))"
+echo "$firstnum minus $secondnum is $((firstnum - secondnum))"
+echo "$firstnum times $secondnum is $((firstnum * secondnum))"
+echo "$firstnum divided by $secondnum is $((firstnum / secondnum))"
+echo It is also $(awk "BEGIN{printf\"%.2f\}")
