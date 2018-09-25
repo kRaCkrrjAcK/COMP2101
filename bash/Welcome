@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#This script provides an example of how to do the exercise from the slide today.
+
+####################
+# Variables     #
+###################
+
+mytitle="Oh Captain my Captain"
+MYNAME=" Marcus Chenier"
+hostname=$(hostmane)
+today=$(date +%A)
+
+####################
+# Main            #
+###################
+
+echo "Welcome to planet $hostname, $mytitle $MYNAME"
+echo "Today is $today."
