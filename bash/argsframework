@@ -3,7 +3,9 @@
 #This script provides a generic command line processor
 #  for inclusion in future scripts I write
 
+echo "Found '$#' things on the command line"
 while [$# -gt 0 ]; do
+  echo "Processing '$1'"
   case "$1" in
    -h|--help)
      echo "Usage: $0 [-h|--help] [-d N|--debug N]"
@@ -11,10 +13,12 @@ while [$# -gt 0 ]; do
       ;;
     -d|--debug)
       debug ="$2"
+      echo "Assigned '$2' to debug variable"
       if  [ -z "debug" ]; then
         echo " You have to give me a debug level if you give me the debug
         option" >&2
         echo "Usage: $0 [-h|--help] [-d N|N==debug N]"
+        echo " Printed out error message and help"
         exit 1
       fi
       ;;
