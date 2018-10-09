@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#This script provides a generic command line processor
+#  for inclusion in future scripts I write
+
+while [$# -gt 0 ]; do
+  case "$1" in
+   -h|--help)
+     echo "Usage: $0 [-h|--help] [-d N|--debug N]"
+     exit 0
+      ;;
+     *)
+       echo "I didn't understand '$1'" >&2
+       exit 1
+      ;;
+    esac
+
+     shift
+    done
+
+  echo "Done processing the command line."
