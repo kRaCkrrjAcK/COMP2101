@@ -9,6 +9,15 @@ while [$# -gt 0 ]; do
      echo "Usage: $0 [-h|--help] [-d N|--debug N]"
      exit 0
       ;;
+    -d|--debug)
+      debug ="$2"
+      if  [ -z "debug" ]; then
+        echo " You have to give me a debug level if you give me the debug
+        option" >&2
+        echo "Usage: $0 [-h|--help] [-d N|N==debug N]"
+        exit 1
+      fi
+      ;;
      *)
        echo "I didn't understand '$1'" >&2
        exit 1
