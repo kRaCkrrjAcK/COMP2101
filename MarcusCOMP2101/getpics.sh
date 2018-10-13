@@ -11,6 +11,9 @@
 # Sample output:
 #     Found 95 regular files using 7.1M of storage in the ~/Pictures directory
 
+cd ~/Pictures
 echo -n "Found "find . -type f|wc -l
+wget -q http://zonzorp.net/pics.zip
+unzip -q pics.ziprm pics.zip 
 echo -n " regular files using "du -sh .|awk '{print $1}'
 echo " of storage in the ~/Pictures directory"
