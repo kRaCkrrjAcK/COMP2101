@@ -5,7 +5,7 @@
 #Draw external internet address from $ curl icanhazip.com
 #Draw internal interface with $ ifconfig
 
-ifconfig en enp0s8|grep inet|sed -e 's/.*addr: //' -e 's/.*addr://' -e 's/ .*//'|grep [[:print:]]
+ifconfig enp0s8|grep inet|sed -e 's/.*addr: //' -e 's/.*addr://' -e 's/ .*//'|grep [[:print:]]
 
 
 
