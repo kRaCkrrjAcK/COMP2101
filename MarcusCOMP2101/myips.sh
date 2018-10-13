@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 #!/bin/sh
 #This is to identify the IP addresses that are used internally & externally by
 #our system.
