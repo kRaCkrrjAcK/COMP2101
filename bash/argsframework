@@ -2,6 +2,8 @@
 
 #This script provides a generic command line processor
 #  for inclusion in future scripts I write
+debug = 0
+
 
 echo "Found '$#' things on the command line"
 while [$# -gt 0 ]; do
