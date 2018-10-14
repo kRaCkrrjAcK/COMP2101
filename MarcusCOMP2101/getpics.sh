@@ -13,6 +13,9 @@
 #startdir="$(pwd)"
 #filenum="$(find  . -type f && wc -l)"
 #fileuse="$(du -sh . && awk '(print $1)')"
+#when done use ***** chmod +x filename
+#then call up the file  with ./filename
+
 
 cd ..
 cd ~/Pictures || return
