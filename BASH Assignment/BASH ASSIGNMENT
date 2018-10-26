@@ -1,0 +1,46 @@
+#!/bin/backlash
+#
+#This script is set to provide a report on memrory usage including:
+#Total RAM installed
+#Total used and cached RAM
+#Total available RAM & free RAM
+#Total shared RAM within used RAM
+#Percentage of total RAM used
+#Percentage of total cached RAM
+
+echo "This is a Memory usage report."
+
+# Total RAM in the current system.
+free -m
+echo" "
+
+#Total available RAM & free RAM
+echo "Total RAM amout is: "
+awk '/^Mem/ {print $2}' <{free -m}
+echo "Total of free RAM is: "
+awk '/^Mem/ {print $4}' <{free -m}
+echo " "
+
+#Total used and cached RAM
+echo "Total of used & cached RAM is: "
+awk '/^Mem/ {print $3+$5}' <{free -m}
+echo " "
+
+#Difference between available RAM and free RAM
+echo "The difference between the amount of available RAM and free RAM: "
+awk '/^Mem/ {print $7-$4}' <{free -m}
+echo " "
+
+#The percentage of total  shared RAM used
+echo "The percentage of total shared RAM used: "
+awk '/^Mem/ {print $5/$3 *100}' <{free -m}
+echo " "
+
+#The percentage of total used RAM
+echo "The percentage of total used RAM: "
+awk '/^Mem/ {print #3/#2 *100}' <{free -m}
+echo " "
+
+#The percentage of cached RAM
+echo "The percentage of cached RAM: "
+awk '/^Mem/ {print $6/$2 *100}' <{free -m}
