@@ -38,7 +38,7 @@ echo " "
 
 #The percentage of total used RAM
 echo "The percentage of total used RAM: "
-awk '/^Mem/ {print #3/#2 *100}' <(free -m)
+awk '/^Mem/ {print $3/$2 *100}' <(free -m)
 echo " "
 
 #The percentage of cached RAM
