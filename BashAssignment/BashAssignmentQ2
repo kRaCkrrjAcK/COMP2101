@@ -1,5 +1,8 @@
 #!/bin/backlash
 #
+#Bash Assigment Q2
+#Oct 26/18
+#
 #This script is set to provide a report on memrory usage including:
 #Total RAM installed
 #Total used and cached RAM
