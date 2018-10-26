@@ -1,25 +1,26 @@
 #!/bin/bash
 #Bash Assigment Q1
-#Oct 26/18
 
-#default variables
+#Dice setting variables for amount and sides
 sum=0
 sides=6
 count=2
+
+#
 while [ $count -gt 0 ]; do #loop
   case $1 in
     -h | --help ) #sets the help command
-      echo "Options : -c N or --count N sets the number of dice. -s N or --side N sets the sides of dice. Default is 2 Dice with 6 Sides"
+      echo "Options : -c N or --count N sets the amount of dice used. -s N or --side N sets the number of sides on the dice. The default is 2 Dice with 6 sides"
       echo "Rules : -c must be between 1 and 9. -s must be between 4 and 20"
       exit 0 #exits with no error
       ;;
       esac
   case $1 in
-    -c | --count ) shift #sets the count command
-      if [[ $1 -lt 1 ]]; then #range checking
+    -c | --count ) shift                      #Set up the count command
+      if [[ $1 -lt 1 ]]; then                 #Checks the range of the numbers
         echo "Must Enter a number between 1 and 9" > /dev/stderr
         exit 1
-      elif [[ $1 -gt 9 ]]; then #range checking
+      elif [[ $1 -gt 9 ]]; then
         echo "Must Enter a number between 1 and 9" > /dev/stderr
         exit 1 #exits with an error
       fi
@@ -27,12 +28,12 @@ while [ $count -gt 0 ]; do #loop
       ;;
   esac
   case $2 in
-    -s | --sides ) shift #sets the sides command
+    -s | --sides ) shift                          #Sets the amount of sides in the command
     if [[ $2 -lt 4 ]]; then #range checking
-      echo "Must Enter a number between 4 and 20" > /dev/stderr
+      echo "Please enter a number between 4 and 20" > /dev/stderr
       exit 1
-    elif [[ $2 -gt 20 ]]; then #range checking
-      echo "Must Enter a number between 4 and 20" > /dev/stderr
+    elif [[ $2 -gt 20 ]]; then                    #Checks the range of the numbers
+      echo "Please enter a number between 4 and 20" > /dev/stderr
       exit 1 #exits with an error
     fi
       sides=$2
@@ -48,4 +49,4 @@ while [ $count -gt 0 ]; do #loop
 
 done
 #Outputs the totals
-echo "You rolled a total of $sum"
+echo "Your total is $sum"
