@@ -16,7 +16,7 @@ echo" "
 
 #Total available RAM & free RAM
 echo "Total RAM amout is: "
-awk' /^Mem/ {print $2}' <(free -m)
+awk '/^Mem/ {print $2}' <(free -m)
 echo "Total of free RAM is: "
 awk '/^Mem/ {print $4}' <(free -m)
 echo " "
