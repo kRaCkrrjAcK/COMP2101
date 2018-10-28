@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+
+command=$1
+
+Case $1 in                                #Creating Help
+  -h | --help)                            #Setup command for help files
+    echo "Enter a filename to identify it's source: "
+    exit 0                                #Exit without error
+        ;;
+esac
+  if [[ $command = "" ]]; then            #Prompts the first segment
+        read -p "Please enter a command name: " command
+        if [ $command = "" ]; then
+          exit 0
+        fi
+      fi
+
+while [[ $command != "" ]]; do             #This loops through prompts
+      arg="dpkg -S  $command"              #Here is where the variable is provided for the command to be run
+      $arg || echo "Not a file"            #Checking for errors
+      read -p " Please try entering another command:  " command       #This is a secondary prompt
+      if [[ $command = "" ]]; then         #Providing the conditions for an exit
+        exit 0
+      fi
+    done
