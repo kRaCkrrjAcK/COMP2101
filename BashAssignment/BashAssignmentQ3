@@ -1,9 +1,8 @@
 #!/bin/bash
-#
 
 command=$1
 
-Case $1 in                                #Creating Help
+case $1 in                                #Creating Help
   -h | --help)                            #Setup command for help files
     echo "Enter a filename to identify it's source: "
     exit 0                                #Exit without error
